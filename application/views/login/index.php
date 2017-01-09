@@ -29,30 +29,22 @@
                     <?php
                 }
                 ?>
+    
+        <h2 class="form-signin-heading">Ingreso Administrador</h2>
+        
+        <label class="sr-only">Nombre de Usuario</label>
+        <input type="text" class="form-control" name="user" autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password"  name="pass" class="form-control">
 
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Por favor ingrese su RUT</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                                <div class="form-group">
-                          
-                                         
-                <input type="text" class="form-control" id="rut" name="rut"  onblur="return Rut(form.rut.value)">
-            </div>    
-
-                              
-                                <!-- Change this to a button or input when using this as a form -->
-                               <button type="submit" class="btn btn-primary">Ingresar</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="checkbox">
+        
         </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Ingresar</button>
+ 
+    
+
+
     </div>
 <?php echo form_close(); ?>

@@ -8,9 +8,6 @@
     <title>Control Conductores</title>
 
 
-    <link href="<?php echo base_url() ?>public/materialize/css/materialize.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>public/css/conductores.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>public/css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,6 +28,5 @@
     <script src="<?php echo base_url() ?>public/js/jquery-3.1.1.min.js"></script>
     <script src="<?php echo base_url() ?>public/js/funciones.js"></script>
     <script src="<?php echo base_url() ?>public/js/rut.js"></script>
-    <script src="<?php echo base_url() ?>public/materialize/js/materialize.min.js"></script>
   </body>
 </html>

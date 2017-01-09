@@ -10,7 +10,15 @@ $config = array(
          'login'
         => array(        
             array('field' => 'rut','label' => 'RUT','rules' => 'required|trim|esRut|max_length[12]'),
+         
         ), 
+
+        'userlogin'
+        => array(
+            array('field' => 'user','label' => 'Usuario','rules' => 'required|trim'),
+            array('field' => 'pass','label' => 'Password','rules' => 'required|trim'),
+
+            ),
 
         'add_usuario'
         => array(

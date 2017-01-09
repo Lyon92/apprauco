@@ -6,7 +6,7 @@ class Acceso extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->layout->setLayout('frontadmin');
+		$this->layout->setLayout('loginConductor');
         $this->load->library('codigounico');
 	
 	}
