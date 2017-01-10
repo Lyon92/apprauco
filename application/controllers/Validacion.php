@@ -7,7 +7,7 @@ class Validacion extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->layout->setLayout('frontadmin');
+		$this->layout->setLayout('conductorApp');
 		$this->load->library('codigounico');
 	
 	}
@@ -81,13 +81,56 @@ class Validacion extends CI_Controller {
 
 	public function Acepta(){
 
+		$Codigo = $this->session->userdata('SCodigo');
+
+		$Datos = $this->validacion_model->DatosValida($Codigo);
+
+		$HoraLlegada = $Datos->HoraLlegada;
+	 	$HoraSalida = $Datos->HoraSalida;
+
+		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
+		
+
+		$data= array(
+
+			'HoraTranscurrida' => $TiempoEnTienda,
+			'Match' => $Codigo,
+			'Acepta' => 1 ,
+
+			);
+
+		$insertar = $this->validacion_model->Acepta($data);
+
 		$this->session->sess_destroy("conductores");
 		redirect(base_url()."acceso/salir");
 	}
 
 	public function NoAcepta(){
 
+		$Codigo = $this->session->userdata('SCodigo');
+
+		$Datos = $this->validacion_model->DatosValida($Codigo);
+
+		$HoraLlegada = $Datos->HoraLlegada;
+	 	$HoraSalida = $Datos->HoraSalida;
+
+		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
+		
+
+		$data= array(
+
+			'HoraTranscurrida' => $TiempoEnTienda,
+			'Match' => $Codigo,
+			'Acepta' => 0 ,
+
+			);
+
+		$insertar = $this->validacion_model->Acepta($data);
+
+		$this->session->sess_destroy("conductores");
 		redirect(base_url()."acceso/salir");
+
+		
 	}
 }
 

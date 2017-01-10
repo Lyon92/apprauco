@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
         <div class="row min-line">
         <div class="col-xs-12 text-right"><i class="fa fa-phone-square" aria-hidden="true"></i> Mesa de Ayuda TIC : <b>7777</b></div>
@@ -42,39 +44,26 @@
 
   <div class="container">
  
-	      <?php echo form_open(null,array('name'=>'form')); 
+	      <?php echo form_open(null,array('name'=>'form')); ?>
 
-                //acá visualizamos los mensajes de error
-                $errors=validation_errors('<li>','</li>');
-                if($errors!="")
-                 {
-                ?>
-
-                    <div class="alert alert-danger">
-                        <ul>
-                            <?php echo $errors;?>
-                        </ul>
-                    </div>
-
-                <?php
-                  }
-                ?>
+             
 			
-		<div class="row">
+		<div class="row m-top">
 			<div class="col-xs-6 col-xs-offset-3">
 			 
         <div class="form-group">
-          <label for="tienda" class="control-label">Seleccione Tienda</label>
+          <label for="tienda" class="control-label"><h3>Seleccione Tienda</h3></label>
             <select name="tienda" class="form-control">
               <?php foreach ($selTienda as $value): ?>
                 <option value="<?php echo $value->Id ?>"><?php echo $value->NomTienda; ?></option>
               <?php endforeach ?>
             </select>
         </div>
+        <br>
 
-        <div class="form-group"> 
+        <div class="form-group "> 
 	        <label class="radio-inline"><input type="radio" name="optradio" id="vuelta1" value="1" <?php echo set_radio('optradio','1') ?>>
-	         Vuelta 1
+	        Vuelta 1
           </label>
 				
           <label class="radio-inline"><input type="radio" name="optradio" id="vuelta2" value="2"<?php echo set_radio('optradio','2') ?>>
@@ -82,25 +71,50 @@
           </label>
 			  </div>  
 			
-
-			  <div class="form-group"> 
-				  <div class="checkbox-inline">
-	  				<input type="checkbox" name="entrega" id="mercaderia" value="1" <?php echo set_checkbox('entrega[]','1'); ?>>
-	  				<label>Entrega de Mercaderia</label>
+        <br>
+			  <div class="form-group "> 
+				  <div class="">
+	  				<input type="checkbox" name="entrega" id="mercaderia" value="1" <?php echo set_checkbox('entrega','1'); ?>>
+	  				<label for="mercaderia">Entrega de Mercaderia</label>
 				  </div>
 
-				  <div class="checkbox-inline">
-				    <input type="checkbox" name="entrega1" id="insumos" value="1" <?php echo set_checkbox('entrega[]','1'); ?>>
-				    <label>Entrega de Insumos</label>
+				  <div class="">
+				    <input type="checkbox" name="entrega1" id="insumos" value="1" <?php echo set_checkbox('entrega1','1'); ?>>
+				    <label for="insumos">Entrega de Insumos</label>
 				  </div>		
 			  </div>         	     
             
         <div class="form-group"> <!-- Submit Button -->
-          <button type="submit" class="btn btn-success">Registrar LLegada</button>
+          <button type="submit" class="btn btn-success btn-block">Registrar LLegada</button>
         </div>     
       </div>
+        <div class="col-xs-6 col-xs-offset-3">
+           <?php 
+                  //acá visualizamos los mensajes de error
+                        $errors=validation_errors('<li>','</li>');
+                        if($errors!="")
+                         {
+                        ?>
+
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <?php echo $errors;?>
+                                </ul>
+                            </div>
+
+                        <?php
+                          }
+                        ?> 
+        </div>
 		</div>
 
-       <?php echo form_close(); ?>
+      
+
+
+      
 	</div>
+
+
+
 </div>
+ <?php echo form_close(); ?>

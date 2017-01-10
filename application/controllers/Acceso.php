@@ -6,7 +6,7 @@ class Acceso extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->layout->setLayout('loginConductor');
+		
         $this->load->library('codigounico');
 	
 	}
@@ -22,6 +22,7 @@ class Acceso extends CI_Controller {
 
 	public function login()
     {
+        $this->layout->setLayout('loginAdmin');
         if($this->input->post())
         {
             if($this->form_validation->run('login'))
@@ -55,6 +56,7 @@ class Acceso extends CI_Controller {
 
     public function conductorin()
     {
+         $this->layout->setLayout('conductorApp');
         if($this->session->userdata('id'))
         {
 
@@ -126,6 +128,7 @@ class Acceso extends CI_Controller {
 
      public function conductorout()
         {
+             $this->layout->setLayout('conductorApp');
              if($this->session->userdata('id')){
              
        

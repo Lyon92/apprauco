@@ -35,7 +35,7 @@ class Login extends CI_Controller {
                 {
                    
                     //redireccionamos a la url principal de los contenidos restringidos
-                    redirect(base_url()."empresas");
+                    redirect(base_url()."dashboard");
                 }
             }
         }

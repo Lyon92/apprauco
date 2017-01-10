@@ -26,7 +26,16 @@ class Validacion_model extends CI_Model {
 		return $result;
 
 	}
+
+	public function Acepta($data){
+
+		$this->db->insert('registrototal', $data);
+		return $this->db->insert_id();
+
 	
+	}
+	
+
 
 	
 }

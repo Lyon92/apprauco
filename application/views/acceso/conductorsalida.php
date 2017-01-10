@@ -16,7 +16,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img  class="img-responsive logo" src="img/logo.png"></a>
+            <a class="navbar-brand" href="#"><img  class="img-responsive logo" src="<?php echo base_url() ?>/public/img/logo.png"></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +42,8 @@
       </div>
       <!-- BARRA DATOS TIENDA y FECHA-->
   <div class="container">
-  <div class="row">
-  
+  <div class="row m-top">
+    <div class="col-xs-6 col-xs-offset-3">
       <?php
             if($this->session->flashdata('mensaje')!='')
             {
@@ -56,7 +56,7 @@
                <?php 
             }
             ?>
-
+  </div>
   </div>
 </div>
 
@@ -83,30 +83,31 @@
 		<div class="row">
 			<div class="col-xs-6 col-xs-offset-3">
 
-	
 
-			<div class="form-group"> 
-        <div class="checkbox-inline">
-            <input type="checkbox" name="salida1" id="bandeja" value="1" <?php echo set_checkbox('salida1','1'); ?>>
-            <label>Retiro de Bandejas</label>
+			<div class="form-group text-center"> 
+        <div class=" ">
+            <input type="checkbox" name="salida1" id="bandeja1" value="1" <?php echo set_checkbox('salida1','1'); ?>>
+            <label for="bandeja1">Retiro de Bandejas</label>
         </div><br>
 
-        <div class="checkbox-inline">
-          <input type="checkbox" name="salida2" id="devolucion" value="1" <?php echo set_checkbox('salida2','1'); ?>>
-         <label>Retiro de Devoluciones</label>
+        <div class="">
+          <input type="checkbox" name="salida2" id="bandeja2" value="1" <?php echo set_checkbox('salida2','1'); ?>>
+         <label for="bandeja2">Retiro de Devoluciones</label>
         </div>    <br>
 
-        <div class="checkbox-inline">
-          <input type="checkbox" name="salida3" id="devolucion" value="1" <?php echo set_checkbox('salida3','1'); ?>>
-         <label>No hay Retiro</label>
+        <div class="">
+          <input type="checkbox" name="salida3" id="bandeja3" value="1" <?php echo set_checkbox('salida3','1'); ?>>
+         <label for="bandeja3">No hay Retiro</label>
         </div>    
       </div>                 
             
             <div class="form-group"> <!-- Submit Button -->
-                <button type="submit" class="btn btn-danger">Registrar Salida</button>
+                <button type="submit" class="btn btn-danger btn-block">Registrar Salida</button>
              </div>     
         </div>
 		</div>
        <?php echo form_close(); ?>
+
 	  </div>
 </div>
+
