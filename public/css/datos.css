@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+
+
+
+div.main{
+background:     #3c1111; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,     #3c1111 1%,  #220d0d 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,    #3c1111), color-stop(100%,  #220d0d)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,      #3c1111 1%, #220d0d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,     #3c1111 1%,  #220d0d 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,      #3c1111 1%, #220d0d 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,      #3c1111 1%, #220d0d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='   #3c1111', endColorstr='  #220d0d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+height:calc(100vh);
+width:100%;
+}
+
+
+

@@ -6,20 +6,17 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->layout->setLayout('loginAdmin');
         $this->load->library('codigounico');
 	
 	}
 
-	{
-
-
-        print_r($datos);exit;
-        $this->layout->view("index");
-
-
+	
+	public function index() {
 
         if($this->input->post())
         {
+            if($this->form_validation->run('userlogin'))
             {
 
                 $user = $this->input->post('user');
@@ -29,6 +26,7 @@ class Login extends CI_Controller {
                 //ingresados por el usuario existen en la bd
                 $datos = $this->login_model->login($user,$pass);
                 //crear una condición para validar lo anterior
+                if($datos==0)
                 {
                     $this->session->set_flashdata('css','danger');
                     $this->session->set_flashdata('mensaje','El usuario o la clave ingresada no es valido');
@@ -37,9 +35,11 @@ class Login extends CI_Controller {
                 {
                    
                     //redireccionamos a la url principal de los contenidos restringidos
+                    redirect(base_url()."empresas");
                 }
             }
         }
+        $this->layout->view('index');
     }
 
   
@@ -47,6 +47,8 @@ class Login extends CI_Controller {
 
     public function Logout()
         {
+            $this->session->sess_destroy();
+            redirect(base_url().'Login',  301);
         }
 
 

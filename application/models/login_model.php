@@ -36,6 +36,29 @@ class Login_model extends CI_Model {
 	}
 
 
+	public function login($user,$pass){
+		
+		$this->db->select('c.Usuario, c.Password, c.Usuarios_Id');
+		$this->db->from('Credenciales c');
+		$this->db->join('Usuarios u', 'c.Usuarios_Id = u.Id');
+		$this->db->where('c.Usuario', $user);
+		$this->db->where('c.Password', $pass);
+
+		$datos = $this->db->get();
+
+		if ($datos->num_rows() == 1) {
+
+			return 1;
+
+
+		}else {
+			return 0;
+		}
+
+	
+	}
+	
+
 
 }
 
