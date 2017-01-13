@@ -23,7 +23,9 @@
 
       <!-- Custom Fonts -->
       <link href="<?php echo base_url() ?>public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+          <script src="<?php echo base_url() ?>public/vendor/jquery/jquery.min.js"></script>
 
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -142,7 +144,7 @@
     <script src="<?php echo base_url() ?>public/vendor/raphael/raphael.min.js"></script>
     <script src="<?php echo base_url() ?>public/vendor/morrisjs/morris.min.js"></script>
     <script src="<?php echo base_url() ?>public/data/morris-data.js"></script>
-
+   
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url() ?>public/dist/js/sb-admin-2.js"></script>
   </body>

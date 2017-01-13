@@ -42,8 +42,6 @@ class Login extends CI_Controller {
         $this->layout->view('index');
     }
 
-  
-
 
     public function Logout()
         {
