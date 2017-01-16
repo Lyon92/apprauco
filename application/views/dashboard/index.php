@@ -1,4 +1,6 @@
 <h1>ANALITICA</h1>
+
+<?php echo $TiempoEnTienda; ?>
 	
 			<canvas id="myChart"></canvas>
 

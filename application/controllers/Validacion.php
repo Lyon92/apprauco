@@ -22,7 +22,8 @@ class Validacion extends CI_Controller {
 	 	$HoraLlegada = $Datos->HoraLlegada;
 	 	$HoraSalida = $Datos->HoraSalida;
 
-
+	 	$HoraLLegadaTienda = $Datos->HoraSemana;
+	 	$Tienda = $Datos->Tienda;
 	 	//Visualizar Entrega
 	 	$mercaderia = $Datos->EntregaMercaderia;
 	 	$insumos = $Datos->EntregaInsumo;
@@ -72,9 +73,9 @@ class Validacion extends CI_Controller {
 		
 
 		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
+		$LLegada = $this->codigounico->restaHoras($HoraLLegadaTienda,$HoraLlegada);
 
-
-	 	$this->layout->view("index",compact('HoraLlegada','HoraSalida','Entrega','Retiro','TiempoEnTienda'));
+	 	$this->layout->view("index",compact('HoraLlegada','HoraSalida','Entrega','Retiro','TiempoEnTienda','LLegada','Tienda'));
 
 	}
 

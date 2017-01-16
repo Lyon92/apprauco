@@ -14,10 +14,11 @@ class Validacion_model extends CI_Model {
 
 		$query = $this->db
 				 ->select('*')
-				 ->from('registrosin i')	
+				 ->from('registrosin i')
+
 				 ->join('registrosout o', 'i.Match = o.Match')
-				 ->where('i.Match', $Codigo)	
-				 			 		 
+				 ->join('tiendas t', 't.Id = i.Tienda')
+				 ->where('i.Match', $Codigo)				 			 		 
 				 ->get();
 
 
