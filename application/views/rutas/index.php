@@ -29,11 +29,8 @@
 	   	<thead>
             <tr>
                 <th>Ruta</th>
-                <th>Hora Llegada</th>
                 <th>Vuelta</th>
                 <th>Empresa</th>
-                <th>Tienda</th>
-                <th>Usuario</th>
                 <th>Creado</th>
                 <th>Modificado</th>
                 <th>Acciones</th>
@@ -43,12 +40,9 @@
         	<?php foreach ($datos as $dato) { ?>
         	<tr>
         		<td><?php echo $dato->CodRuta ?></td>
-        		<td><?php echo $dato->HoraLlegada ?></td>
                 <td><?php echo $dato->Vuelta ?></td>
         		<td><?php echo $dato->Empresas_Id ?></td>
-        		<td><?php echo $dato->Tiendas_Id ?></td>
-                <td><?php echo $dato->Usuarios_Id ?></td>
-                <td><?php echo $dato->Create ?></td>
+        		<td><?php echo $dato->Create ?></td>
                 <td><?php echo $dato->Modified ?></td>
         		<td>
         			<a class="btn btn-warning" href="<?php echo base_url() ?>rutas/edit/<?php echo $dato->Id ?>" aria-label="Editar">

@@ -15,10 +15,10 @@ class Rutas_model extends CI_Model {
 		switch ($quehago) {
 			case 'limit':
 				 $query = $this->db
-						 ->select('Id,CodRuta,HoraLlegada,Vuelta,Empresas_Id,Tiendas_Id,Usuarios_Id,Create,Modified')
+						 ->select('Id,CodRuta,Vuelta,Empresas_Id,Create,Modified')
 						 ->from('rutas')
 						 ->limit($porpagina,$pagina)
-						 ->order_by('id','desc')
+						 ->order_by('CodRuta','ASC')
 						 ->get();
 
 					return $query->result();
@@ -28,7 +28,7 @@ class Rutas_model extends CI_Model {
 			
 			case 'cuantos':
 				 $query = $this->db
-						 ->select('Id,CodRuta,HoraLlegada,Vuelta,Empresas_Id,Tiendas_Id,Usuarios_Id,Create,Modified')
+						 ->select('Id,CodRuta,Vuelta,Empresas_Id,Create,Modified')
 						 ->from('rutas')
 						 ->count_all_results();
 
@@ -43,9 +43,9 @@ class Rutas_model extends CI_Model {
 	public function getAll(){
 
 		$query = $this->db
-				 ->select('Id,CodRuta,HoraLlegada,Vuelta,Empresas_Id,Tiendas_Id,Usuarios_Id,Create,Modified')
+				 ->select('Id,CodRuta,Vuelta,Empresas_Id,Create,Modified')
 				 ->from('rutas')
-				 ->order_by('Id','desc')
+				 ->order_by('CodRuta','ASC')
 				 ->get();
 
 		/*echo $this->db->last_query();exit;	*/	 	
@@ -55,7 +55,7 @@ class Rutas_model extends CI_Model {
 	public function getAllById($id){
 
 		$query = $this->db
-				 ->select('Id,CodRuta,HoraLlegada,Vuelta,Empresas_Id,Tiendas_Id,Usuarios_Id,Create,Modified')
+				 ->select('Id,CodRuta,Vuelta,Empresas_Id,Create,Modified')
 				 ->from('rutas')
 				 ->where(array('Id'=>$id))
 				 ->get();

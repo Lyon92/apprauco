@@ -73,6 +73,8 @@ class Tiendas extends CI_Controller {
 						'NomTienda'=>$this->input->post('tienda',true),
 						'CodTienda'=>$this->input->post('codigo',true),
 						'DireTienda'=>$this->input->post('direccion',true),
+						'HoraEstimada'=>$this->input->post('hora',true),
+						'RutaTienda'=>$this->input->post('ruta',true),
 						'Create'=>date('Y-m-d'),
 						'Modified'=>date('Y-m-d'),
 					);
@@ -106,6 +108,12 @@ class Tiendas extends CI_Controller {
 						'NomTienda'=>$this->input->post('tienda',true),
 						'CodTienda'=>$this->input->post('codigo',true),
 						'DireTienda'=>$this->input->post('direccion',true),
+						'RutaSemana'=>$this->input->post('rutaSemana',true),
+						'HoraSemana'=>$this->input->post('horaSemana',true),
+						'RutaSabado'=>$this->input->post('rutaSabado',true),
+						'HoraSabado'=>$this->input->post('horaSabado',true),
+						'RutaDomingo'=>$this->input->post('rutaDomingo',true),
+						'HoraDomingo'=>$this->input->post('horaDomingo',true),
 						'Modified'=>date('Y-m-d'),
 					);
 				$this->tiendas_model->update($data,$this->input->post('id',true));

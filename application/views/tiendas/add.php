@@ -50,7 +50,40 @@
             <div class="form-group"> 
                 <label for="direccion" class="control-label">Dirección</label>
                 <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo set_value_input(array(),'direccion','direccion')?>">
-            </div>                                  
+            </div> 
+            
+             <div class="form-group"> 
+                <label for="rutaSemana" class="control-label">Ruta Semana</label>
+                <input type="text" class="form-control" id="rutaSemana" name="rutaSemana" value="<?php echo set_value_input(array(),'rutaSemana','rutaSemana')?>">
+            </div>  
+
+
+             <div class="form-group"> 
+                <label for="horaSemana" class="control-label">Hora Semana</label>
+                <input type="text" class="form-control" id="horaSemana" name="horaSemana" value="<?php echo set_value_input(array(),'horaSemana','horaSemana')?>">
+            </div>    
+
+
+            <div class="form-group"> 
+                <label for="rutaSabado" class="control-label">Ruta Sabado</label>
+                <input type="text" class="form-control" id="rutaSabado" name="rutaSabado" value="<?php echo set_value_input(array(),'rutaSabado','rutaSabado')?>">
+            </div>
+            
+             <div class="form-group"> 
+                <label for="horaSabado" class="control-label">Hora Sabado</label>
+                <input type="text" class="form-control" id="horaSabado" name="horaSabado" value="<?php echo set_value_input(array(),'horaSabado','horaSabado')?>">
+            </div>
+
+
+
+             <div class="form-group"> 
+                <label for="rutaDomingo" class="control-label">Ruta Domingo</label>
+                <input type="text" class="form-control" id="rutaDomingo" name="rutaDomingo" value="<?php echo set_value_input(array(),'rutaDomingo','rutaDomingo')?>">
+            </div>   
+             <div class="form-group"> 
+                <label for="horaDomingo" class="control-label">Hora Domingo</label>
+                <input type="text" class="form-control" id="horaDomingo" name="horaDomingo" value="<?php echo set_value_input(array(),'horaDomingo','horaDomingo')?>">
+            </div>                         
                             
             <div class="form-group"> <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary">Agregar</button>

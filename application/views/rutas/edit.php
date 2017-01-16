@@ -40,11 +40,7 @@
                 <label for="ruta" class="control-label">Ruta</label>
                 <input type="text" class="form-control" id="ruta" name="ruta" value="<?php echo set_value_input($datos,'ruta',$datos->CodRuta)?>">
             </div>  
-
-            <div class="form-group"> 
-                <label for="hora" class="control-label">Hora de Llegada</label>
-                <input type="text" class="form-control" id="hora" name="hora" value="<?php echo set_value_input($datos,'hora',$datos->HoraLlegada)?>">
-            </div>  
+ 
             
             <div class="form-group"> 
                 <label for="vuelta" class="control-label">Vuelta</label>
@@ -64,28 +60,7 @@
                 ?>      
             </div>
 
-            <div class="form-group">
-                <label for="tienda" class="control-label">Tienda</label>
-                <?php 
-                    $lista = array();
-                    foreach ($selTienda as $registro) { 
-                       
-                        $lista[$registro->Id] = $registro->NomTienda;
-                    }
-                    echo form_dropdown('tienda', $lista, $datos->Tiendas_Id, 'class="form-control"');
-                    ?>
-            </div>
-
-            <div class="form-group">
-                <label for="usuario" class="control-label">Usuario</label>
-                  <?php 
-                    $lista = array();
-                    foreach ($selUsuario as $registro) { 
-                        $lista[$registro->Id] = $registro->Nom." ".$registro->Apepaterno; 
-                    }
-                    echo form_dropdown('usuario', $lista, $datos->Usuarios_Id, 'class="form-control"');
-                    ?>
-            </div>
+         
         
                   
             

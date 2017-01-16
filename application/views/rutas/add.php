@@ -41,11 +41,7 @@
                 <label for="ruta" class="control-label">Ruta</label>
                 <input type="text" class="form-control" id="ruta" name="ruta" value="<?php echo set_value_input(array(),'ruta','ruta')?>" autofocus="true">
             </div>  
-
-            <div class="form-group"> 
-                <label for="hora" class="control-label">Hora de Llegada</label>
-                <input type="text" class="form-control" id="hora" name="hora" value="<?php echo set_value_input(array(),'hora','hora')?>">
-            </div>                  
+            
             
             <div class="form-group"> 
                 <label for="vuelta" class="control-label">Vuelta</label>
@@ -61,24 +57,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
-            <label for="tienda" class="control-label">Tienda</label>
-                <select name="tienda" class="form-control">
-                <?php foreach ($selTienda as $value): ?>
-                  <option value="<?php echo $value->Id ?>"><?php echo $value->CodTienda; ?></option>
-                <?php endforeach ?>
-                </select>
-            </div>
-
-            <div class="form-group">
-            <label for="usuario" class="control-label">Usuario</label>
-                <select name="usuario" class="form-control">
-                <?php foreach ($selUsuario as $value): ?>
-                  <option value="<?php echo $value->Id ?>"><?php echo $value->Nom." ".$value->Apepaterno; ?></option>
-                <?php endforeach ?>
-                </select>
-            </div>
-
+         
                             
             <div class="form-group"> <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary">Agregar</button>

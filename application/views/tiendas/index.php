@@ -31,6 +31,12 @@
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Direccion</th>
+                <th>Ruta Semana</th>
+                <th>Hora Semana</th>
+                <th>Ruta Sabado</th>
+                <th>Hora Sabado</th>
+                <th>Ruta Domingo</th>
+                <th>Hora Domingo</th>
                 <th>Creado</th>
                 <th>Modificado</th>
                 <th>Acciones</th>
@@ -42,6 +48,12 @@
                 <td><?php echo $dato->CodTienda ?></td>
         		<td><?php echo $dato->NomTienda ?></td>       		
         		<td><?php echo $dato->DireTienda ?></td>
+                <td><?php echo $dato->RutaSemana ?></td>
+                <td><?php echo $dato->HoraSemana ?></td>
+                <td><?php echo $dato->RutaSabado ?></td>
+                <td><?php echo $dato->HoraSabado ?></td>
+                <td><?php echo $dato->RutaDomingo ?></td>
+                <td><?php echo $dato->HoraDomingo ?></td>
         		<td><?php echo $dato->Create ?></td>
         		<td><?php echo $dato->Modified ?></td>
         		<td>

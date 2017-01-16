@@ -15,7 +15,7 @@ class Tiendas_model extends CI_Model {
 		switch ($quehago) {
 			case 'limit':
 				 $query = $this->db
-						 ->select('Id,CodTienda,NomTienda,DireTienda,Create,Modified')
+						 ->select('Id,CodTienda,NomTienda,DireTienda,RutaSemana,HoraSemana,RutaSabado,HoraSabado,RutaDomingo,HoraDomingo,Create,Modified')
 						 ->from('tiendas')
 						 ->limit($porpagina,$pagina)
 						 ->order_by('CodTienda','desc')
@@ -28,7 +28,7 @@ class Tiendas_model extends CI_Model {
 			
 			case 'cuantos':
 				 $query = $this->db
-						 ->select('Id,CodTienda,NomTienda,DireTienda,Create,Modified')
+						 ->select('Id,CodTienda,NomTienda,DireTienda,RutaSemana,HoraSemana,RutaSabado,HoraSabado,RutaDomingo,HoraDomingo,Create,Modified')
 						 ->from('tiendas')
 						 ->count_all_results();
 
@@ -43,7 +43,7 @@ class Tiendas_model extends CI_Model {
 	public function getAll(){
 
 		$query = $this->db
-				 ->select('Id,CodTienda,NomTienda,DireTienda,Create,Modified')
+				 ->select('Id,CodTienda,NomTienda,DireTienda,RutaSemana,HoraSemana,RutaSabado,HoraSabado,RutaDomingo,HoraDomingo,Create,Modified')
 				 ->from('tiendas')
 				 ->order_by('CodTienda','desc')
 				 ->get();
@@ -55,7 +55,7 @@ class Tiendas_model extends CI_Model {
 	public function getAllById($id){
 
 		$query = $this->db
-				 ->select('Id,CodTienda,NomTienda,DireTienda,Create,Modified')
+				->select('Id,CodTienda,NomTienda,DireTienda,RutaSemana,HoraSemana,RutaSabado,HoraSabado,RutaDomingo,HoraDomingo,Create,Modified')
 				 ->from('tiendas')
 				 ->where(array('Id'=>$id))
 				 ->get();

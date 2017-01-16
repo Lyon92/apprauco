@@ -78,11 +78,8 @@ class Rutas extends CI_Controller {
 				$data=array(
 
 						'CodRuta'=>$this->input->post('ruta',true),
-						'HoraLlegada'=>$this->input->post('hora',true),
 						'Vuelta'=>$this->input->post('vuelta',true),
 						'Empresas_Id'=>$this->input->post('empresa',true),
-						'Tiendas_Id'=>$this->input->post('tienda',true),
-						'Usuarios_Id'=>$this->input->post('usuario',true),
 						'Create'=>date('Y-m-d'),
 						'Modified'=>date('Y-m-d'),
 					);
@@ -118,11 +115,8 @@ class Rutas extends CI_Controller {
 				$data=array(
 
 						'CodRuta'=>$this->input->post('ruta',true),
-						'HoraLlegada'=>$this->input->post('hora',true),
 						'Vuelta'=>$this->input->post('vuelta',true),
 						'Empresas_Id'=>$this->input->post('empresa',true),
-						'Tiendas_Id'=>$this->input->post('tienda',true),
-						'Usuarios_Id'=>$this->input->post('usuario',true),
 						'Modified'=>date('Y-m-d'),
 					);
 				

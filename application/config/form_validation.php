@@ -44,7 +44,6 @@ $config = array(
         => array(
             
             array('field' => 'ruta','label' => 'Ruta','rules' => 'required|trim|max_length[4]'),
-            array('field' => 'hora','label' => 'Hora','rules' => 'required|trim|max_length[5]'),
     
         ), 
 
