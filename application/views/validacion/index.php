@@ -35,12 +35,7 @@
 
 					<?php echo $TiempoEnTienda ?>
 					
-					<h3>Otro Dato</h3>		
-
-					<?php echo $LLegada ?>
-					<h3>Otro Dato</h3>		
-
-					<?php echo $Tienda ?>
+				
 				<hr>
 
 				 <div class="form-group"> <!-- Submit Button -->

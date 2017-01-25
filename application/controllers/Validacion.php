@@ -22,8 +22,27 @@ class Validacion extends CI_Controller {
 	 	$HoraLlegada = $Datos->HoraLlegada;
 	 	$HoraSalida = $Datos->HoraSalida;
 
-	 	$HoraLLegadaTienda = $Datos->HoraSemana;
-	 	$Tienda = $Datos->Tienda;
+	 	
+	 	$Tienda = $Datos->NomTienda;
+
+	 	$Dia = date("N");
+
+
+	 	if ($Dia <= 5) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraSemana;	
+
+	 	} elseif ($Dia==6) {
+	 		
+	 		$HoraLLegadaTienda = $Datos->HoraSabado;
+
+	 	} elseif ($Dia==7) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraDomingo;	
+	 	}
+
+
+
 	 	//Visualizar Entrega
 	 	$mercaderia = $Datos->EntregaMercaderia;
 	 	$insumos = $Datos->EntregaInsumo;
@@ -75,7 +94,17 @@ class Validacion extends CI_Controller {
 		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
 		$LLegada = $this->codigounico->restaHoras($HoraLLegadaTienda,$HoraLlegada);
 
-	 	$this->layout->view("index",compact('HoraLlegada','HoraSalida','Entrega','Retiro','TiempoEnTienda','LLegada','Tienda'));
+			if (($Datos->HoraSabado == 0) && ($Dia == 6))  {
+
+	 		$LLegada = 0;
+	  	
+	 	   } elseif (($Datos->HoraDomingo == 0) && ($Dia == 7)) {
+	 		
+	 		$LLegada = 0;
+	       }
+
+
+	 	$this->layout->view("index",compact('HoraLlegada','HoraSalida','Entrega','Retiro','TiempoEnTienda','LLegada'));
 
 	}
 
@@ -83,20 +112,94 @@ class Validacion extends CI_Controller {
 	public function Acepta(){
 
 		$Codigo = $this->session->userdata('SCodigo');
+		$Nombre = $this->session->userdata('Nombre');
+		$Apellido = $this->session->userdata('Apellido');
+		$Rut = $this->session->userdata('rut');
+
+		$Usuario = $Nombre." ".$Apellido;
 
 		$Datos = $this->validacion_model->DatosValida($Codigo);
 
 		$HoraLlegada = $Datos->HoraLlegada;
 	 	$HoraSalida = $Datos->HoraSalida;
 
+	 	$Tienda = $Datos->NomTienda;
+
+	 	$Dia = date("N");
+
+	
+
+	 	if ($Dia <= 5) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraSemana;
+	 		$RutaTienda = $Datos->RutaSemana;	
+
+	 	} elseif ($Dia==6) {
+	 		
+	 		$HoraLLegadaTienda = $Datos->HoraSabado;
+	 		$RutaTienda = $Datos->RutaSabado;	
+
+	 	} elseif ($Dia==7) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraDomingo;
+	 		$RutaTienda = $Datos->RutaDomingo;	
+	 	}
+
+
+	 		switch($Dia) {
+			
+			case 1:
+			$Dia = 'Lunes';
+			break;
+			case 2:
+			$Dia = 'Martes';
+			break;
+			case 3:
+			$Dia = 'Miercoles';
+			break;
+			case 4:
+			$Dia = 'Jueves';
+			break;
+			case 5:
+			$Dia = 'Viernes';
+			break;
+			case 6:
+			$Dia = 'Sabado';
+			break;
+			case 7:
+			$Dia = 'Domingo';
+			break;
+		}
+
 		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
+		$LLegada = $this->codigounico->restaHoras($HoraLLegadaTienda,$HoraLlegada);
+
+			if (($Datos->HoraSabado == 0) && ($Dia == 6))  {
+
+	 		$LLegada = 0;
+	  	
+	 	   } elseif (($Datos->HoraDomingo == 0) && ($Dia == 7)) {
+	 		
+	 		$LLegada = 0;
+	       }
 		
 
 		$data= array(
 
 			'HoraTranscurrida' => $TiempoEnTienda,
 			'Match' => $Codigo,
-			'Acepta' => 1 ,
+			'Acepta' => 'SI' ,
+			'TiempoCumplido' => $LLegada,
+			'HoraEstimadaLLegada' => $HoraLLegadaTienda,
+			'HoraLLegadaTienda' => $HoraLlegada,
+			'HoraSalidaTienda' => $HoraSalida,
+			'Conductor' => $Usuario,
+			'RutConductor' => $Rut,
+			'RutaTienda' => $RutaTienda,
+			'Dia' => $Dia,
+			'Fecha' => date('Y-m-d'),
+			'Tienda' => $Tienda,
+
 
 			);
 
@@ -109,21 +212,91 @@ class Validacion extends CI_Controller {
 	public function NoAcepta(){
 
 		$Codigo = $this->session->userdata('SCodigo');
+		$Nombre = $this->session->userdata('Nombre');
+		$Apellido = $this->session->userdata('Apellido');
+		$Rut = $this->session->userdata('rut');
+
+		$Usuario = $Nombre." ".$Apellido;
 
 		$Datos = $this->validacion_model->DatosValida($Codigo);
 
 		$HoraLlegada = $Datos->HoraLlegada;
 	 	$HoraSalida = $Datos->HoraSalida;
 
+	 	$Tienda = $Datos->NomTienda;
+
+	 	$Dia = date("N");
+
+	
+
+	 	if ($Dia <= 5) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraSemana;
+	 		$RutaTienda = $Datos->RutaSemana;		
+
+	 	} elseif ($Dia==6) {
+	 		
+	 		$HoraLLegadaTienda = $Datos->HoraSabado;
+	 		$RutaTienda = $Datos->RutaSabado;	
+
+	 	} elseif ($Dia==7) {
+
+	 		$HoraLLegadaTienda = $Datos->HoraDomingo;
+	 		$RutaTienda = $Datos->RutaDomingo;	
+	 	}
+
+	 		switch($Dia) {
+			
+			case 1:
+			$Dia = 'Lunes';
+			break;
+			case 2:
+			$Dia = 'Martes';
+			break;
+			case 3:
+			$Dia = 'Miercoles';
+			break;
+			case 4:
+			$Dia = 'Jueves';
+			break;
+			case 5:
+			$Dia = 'Viernes';
+			break;
+			case 6:
+			$Dia = 'Sabado';
+			break;
+			case 7:
+			$Dia = 'Domingo';
+			break;
+		}
 		$TiempoEnTienda = $this->codigounico->restaHoras($HoraLlegada,$HoraSalida);
+		$LLegada = $this->codigounico->restaHoras($HoraLLegadaTienda,$HoraLlegada);
+
+			if (($Datos->HoraSabado == 0) && ($Dia == 6))  {
+
+	 		$LLegada = 0;
+	  	
+	 	   } elseif (($Datos->HoraDomingo == 0) && ($Dia == 7)) {
+	 		
+	 		$LLegada = 0;
+	       }
 		
 
 		$data= array(
 
 			'HoraTranscurrida' => $TiempoEnTienda,
 			'Match' => $Codigo,
-			'Acepta' => 0 ,
-
+			'Acepta' => 'NO' ,
+			'TiempoCumplido' => $LLegada,
+			'HoraEstimadaLLegada' => $HoraLLegadaTienda,
+			'HoraLLegadaTienda' => $HoraLlegada,
+			'HoraSalidaTienda' => $HoraSalida,
+			'Conductor' => $Usuario,
+			'RutConductor' => $Rut,
+			'RutaTienda'=> $RutaTienda,
+			'Dia'=> $Dia,
+			'Fecha' => date('Y-m-d'),
+			'Tienda' => $Tienda,
 			);
 
 		$insertar = $this->validacion_model->Acepta($data);

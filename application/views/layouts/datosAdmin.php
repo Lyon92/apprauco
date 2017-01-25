@@ -20,12 +20,15 @@
 
       <!-- Morris Charts CSS -->
       <link href="<?php echo base_url() ?>public/vendor/morrisjs/morris.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
       <!-- Custom Fonts -->
       <link href="<?php echo base_url() ?>public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
           <script src="<?php echo base_url() ?>public/vendor/jquery/jquery.min.js"></script>
-
+  <script src="<?php echo base_url() ?>public/vendor/datatables/js/jquery.dataTables.min.js"></script>
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+       <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+       <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -131,11 +134,16 @@
     <!-- /#wrapper -->
 
     
-    <script src="<?php echo base_url() ?>public/vendor/jquery/jquery.min.js"></script>
+  
     <script src="<?php echo base_url() ?>public/js/funciones.js"></script>
     <script src="<?php echo base_url() ?>public/js/rut.js"></script>
+    <script src="<?php echo base_url() ?>public/js/dashboard.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url() ?>public/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="<?php echo base_url() ?>public/vendor/datatables/js/dataTables.bootstrap.min.js"></script>
+
+
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url() ?>public/vendor/metisMenu/metisMenu.min.js"></script>

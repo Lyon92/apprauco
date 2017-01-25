@@ -20,7 +20,7 @@
 				
    
 			        <div class="form-group">
-			       	 	<input type="text" name="rut" class="form-control"  autofocus onblur="return Rut(form.rut.value)"/>
+			       	 	<input type="text" name="rut" class="form-control"  autofocus placeholder="12323482-7" "/>
 			  		</div>
 
 			    	

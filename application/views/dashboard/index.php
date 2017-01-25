@@ -1,16 +1,66 @@
-<h1>ANALITICA</h1>
+  <br><br>
+<!--   <input type="text" name="daterange" value="01/01/2017 - 01/31/2017" />  <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp; -->
 
-<?php echo $TiempoEnTienda; ?>
+<a href="<?php echo base_url(); ?>excel/excel"  class="btn btn-success pull-right">Exportar Excel</a>
+<br>
+<br>
+ <table class="table  table-bordered table-hover table-condensed table-responsive" id="tblDatos">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Ruta</th>
+                <th>Dia</th>
+                <th>Tienda</th>
+                <th>Hora Estimada</th>
+                <th>Conductor</th>
+                <th>Rut</th>
+                <th>Hora LLegada</th>
+                <th>Hora Salida</th>
+                <th>Tiempo en Tienda</th>
+                <th>Acepta Encargada</th>
+                <th>Codigo</th>
+                <th>Cumplimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($datos as $dato) { ?>
+            <tr>
+                <td><?php echo $dato->Fecha ?></td>
+                <td><?php echo $dato->RutaTienda ?></td>
+                <td><?php echo $dato->Dia ?></td>   
+                <td><?php echo $dato->Tienda ?></td>          
+                <td><?php echo $dato->HoraEstimadaLLegada ?></td>
+                <td><?php echo $dato->Conductor ?></td>
+                <td><?php echo $dato->RutConductor ?></td>
+                <td><?php echo $dato->HoraLLegadaTienda ?></td>
+                <td><?php echo $dato->HoraSalidaTienda ?></td>
+                <td><?php echo $dato->HoraTranscurrida ?></td>
+                <td><?php echo $dato->Acepta ?></td>
+                <td><?php echo $dato->Match ?></td>
+                <td><?php echo $dato->TiempoCumplido ?></td>
+            
+              
+            </tr>
+            <?php } ?>
+        </tbody>
+        
+      </table>
+
+       <nav aria-label="Page navigation">
+          <span class="pull-right"><?php echo $this->pagination->create_links() ?></span> 
+      </nav>
+ <br><br><br>
+<div class="col-xs-10">
 	
 			<canvas id="myChart"></canvas>
-
-	
+            <br><br>
+</div>
 <script>
 var ctx = $("#myChart");
 
 var paramMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-var paramValores = [65, 59, 80, 81, 56, 55, 40, 30, 90, 98, 45, 78];
+var paramValores = [0, 59, 80, 81, 56, 55, 40, 30, 90, 98, 45, 78];
 
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -88,4 +138,14 @@ var myChart = new Chart(ctx, {
         }
     }
 });*/
+</script>
+
+<script type="text/javascript">
+    var baseurl = "http://131.161.1.41/apprauco/";
+</script>
+
+<script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
 </script>
